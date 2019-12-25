@@ -7,7 +7,20 @@
 #start:
 
 #echo -n "press enter if you Want the default value further:"
+
+validate(){
+	if [ -z "$1" ];
+	then
+		echo "This is the null"	
+	else
+		echo "This is the not null"
+	fi
+}
+
 read -p "Enter Project Name (Required) : " project_name
+
+validate project_name
+
 read -p "Enter Admin UserName (Required) : " wp_user
 read -p "Enter Admin Password (Required) : " wp_pass
 read -p "Enter Database Host (Required) : " db_host
@@ -76,7 +89,7 @@ wp core download
 
 wp core config  --dbname=$project_name --dbuser=$DB_USER --dbpass=$DB_PASS --dbhost=$db_host --dbprefix=$db_prefix
 
-wp db create
+#wp db create
 #wp db drop
 #wp db export
 #wp db import
@@ -90,7 +103,10 @@ wp core install --url=$project_host/$project_name --title=$project_name --admin_
 
 sudo chmod 755 -R wp-content
 cd wp-content
-sudo chmod 755 -R uploads	
+if [ ! -d uploads]; then
+	mkdir uploads
+fi
+sudo chmod 777 -R uploads	
 
 
 #test wordpress with some data
