@@ -19,9 +19,7 @@ Here the steps are provided.
 
 1.Open terminal (`ctrl + Alt + T`)
 
-2.`sudo chmod +x  wp-install.sh`
-
-3.`./wp-install.sh`
+2.`sh wp-install.sh`
 
 **These are some benefits of our script**
 
