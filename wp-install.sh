@@ -19,7 +19,8 @@ validate(){
 
 read -p "Enter Project Name (Required) : " project_name
 
-validate project_name
+# TODO : Make the funtion for the same name.
+#validate project_name
 
 read -p "Enter Admin UserName (Required) : " wp_user
 read -p "Enter Admin Password (Required) : " wp_pass
