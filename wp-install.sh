@@ -73,7 +73,7 @@ fi
 
 #this will create the 
 sudo mkdir $project_path
-#sudo chown -R $USER:$USER $project_path
+sudo chown -R $USER:$USER $project_path
 cd $project_path 
 
 #this will install wp cli if there is not available
